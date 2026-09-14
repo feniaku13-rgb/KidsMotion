@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<title>Dunia Bermain - Game Edukasi Anak</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="app">
+
+  <!-- ===================== MENU UTAMA ===================== -->
+  <section id="menuScreen" class="screen active">
+    <div class="bg-decor">
+      <div class="cloud cloud1">☁️</div>
+      <div class="cloud cloud2">☁️</div>
+      <div class="cloud cloud3">☁️</div>
+      <div class="sun">☀️</div>
+    </div>
+
+    <div class="menu-header">
+      <h1 class="app-title">🌈 Dunia Bermain</h1>
+      <p class="app-subtitle">Yuk belajar sambil bermain !</p>
+    </div>
+
+    <div class="menu-grid">
+      <button class="menu-icon-btn" data-game="tracing" style="--btn-color:#FF6F91;--btn-shadow:#C24568;">
+        <span class="menu-icon">🖍️</span>
+        <span class="menu-label">Jiplak Garis</span>
+      </button>
+
+      <button class="menu-icon-btn" data-game="dragdrop" style="--btn-color:#4FC3F7;--btn-shadow:#1E90C7;">
+        <span class="menu-icon">🧩</span>
+        <span class="menu-label">Cocokkan Bentuk</span>
+      </button>
+
+      <button class="menu-icon-btn" data-game="pop" style="--btn-color:#FFD166;--btn-shadow:#DB9E00;">
+        <span class="menu-icon">🎈</span>
+        <span class="menu-label">Letuskan Balon</span>
+      </button>
+
+      <button class="menu-icon-btn" data-game="tilt" style="--btn-color:#81C784;--btn-shadow:#4F9F53;">
+        <span class="menu-icon">🎯</span>
+        <span class="menu-label">Miringkan HP</span>
+      </button>
+    </div>
+
+    <button id="settingsBtn" class="settings-fab" aria-label="Pengaturan">⚙️</button>
+  </section>
+
+  <!-- ===================== LAYAR GAME ===================== -->
+  <section id="gameScreen" class="screen">
+    <canvas id="gameCanvas"></canvas>
+
+    <div id="gameToolbar" class="game-toolbar">
+      <button id="homeBtn" class="toolbar-btn home-btn" aria-label="Menu Utama">🏠</button>
+      <div id="gameInfo" class="game-info"></div>
+      <div id="gameActions" class="game-actions"></div>
+    </div>
+  </section>
+
+</div>
+
+<!-- ===================== MODAL SELEBRASI ===================== -->
+<div id="celebrationModal" class="modal-overlay hidden">
+  <div class="celebration-box">
+    <div class="celebration-emoji" id="celebrationEmoji">🌟</div>
+    <div class="celebration-text" id="celebrationText">Hebat Sekali!</div>
+    <button id="celebrationContinueBtn" class="big-btn continue-btn">Lanjut ➜</button>
+  </div>
+</div>
+
+<!-- ===================== MODAL PARENTAL GATE ===================== -->
+<div id="parentalModal" class="modal-overlay hidden">
+  <div class="parental-box" id="parentalBox">
+    <div class="parental-title">👋 Khusus Orang Tua</div>
+    <p class="parental-desc">Jawab pertanyaan berikut untuk melanjutkan:</p>
+    <div class="parental-question" id="parentalQuestion">Berapa hasil dari 2 + 2 ?</div>
+    <div class="parental-answers" id="parentalAnswers"></div>
+    <button id="parentalCancelBtn" class="small-btn">Batal</button>
+  </div>
+</div>
+
+<!-- ===================== MODAL PENGATURAN ===================== -->
+<div id="settingsModal" class="modal-overlay hidden">
+  <div class="settings-box">
+    <div class="parental-title">⚙️ Pengaturan</div>
+    <button id="toggleSoundBtn" class="big-btn">🔊 Suara: Nyala</button>
+    <button id="closeSettingsBtn" class="big-btn continue-btn">Tutup</button>
+  </div>
+</div>
+
+<script src="audio.js"></script>
+<script src="parental.js"></script>
+<script src="tracing.js"></script>
+<script src="dragdrop.js"></script>
+<script src="popgame.js"></script>
+<script src="tiltgame.js"></script>
+<script src="main.js"></script>
+</body>
+</html>
